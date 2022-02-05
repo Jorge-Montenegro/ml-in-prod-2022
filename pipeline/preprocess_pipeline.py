@@ -110,7 +110,7 @@ def run_pipeline(argv: List[str], data_location: str, output_location: str):
         train_set, test_set = get_train_and_test(p, data_location)
         train_set_transf, test_set_transf, transform_fn = apply_tensorflow_transform(train_set, test_set, metadata)
 
-
+        #Cambio
 
         train_set_tf_example: PCollection[tf.train.Example] = train_set_transf | 'Train to example' >> beam.FlatMap(
             lambda r, _: RecordBatchToExamples(r))
